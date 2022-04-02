@@ -7,7 +7,7 @@ The original was made by Stealh2012. I'll try to do some remake.
 
 ### Screenshots
 <table><tr>
-<td> <img src="Images/shot1.png" alt="Drawing" style="width: 250px;"/> </td>
+<td> <img src="Images/shot1.png" alt="Drawing" style="width: 800px;"/> </td>
 </tr></table>
 
 ## What's new
