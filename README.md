@@ -3,14 +3,18 @@
 Mosaic is the windows shell (app) that helps you access your favorite tools, webpages 
 and other features from a single panel with the aid of a Windows 8 Start screen-like GUI
 
-The original was made by Stealh2012 (developer nichname) in 2014-2015 years and shared at CodePlex. 
-Then this project was totally lost. 
-I'll try to do some remake. 
+The original was made by Stealh2012 (developer nichname) in 2010-2011 years and shared at CodePlex. 
+Then this project was totally lost. I'll try to do some remake (new metro cells, etc.). 
 
 ### Screenshots
 <table><tr>
 <td> <img src="Images/shot1.png" alt="Drawing" style="width: 800px;"/> </td>
 </tr></table>
+
+### My sweet old video from Youtube
+
+https://www.youtube.com/watch?v=U0Hr9-C8WhE
+
 
 ## What's new
 - Redesigned toolbar
@@ -40,8 +44,6 @@ Tests have shown that Mosaic delivers a clean and well-organized layout where yo
 ## Bottom line
 All things considered, Mosaic delivers a simple software solution for helping you access your favorite tools, webpages and other features from a single panel with the aid of tiles. The configuration process is easy to decode even by less experienced users.
 
-## Tags
-Metro User Interface Desktop Customization Customize Desktop Metro UI Customize Customization GUI
 
 AS IS. RnD only. No support.
 
