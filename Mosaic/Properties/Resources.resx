@@ -222,6 +222,9 @@
   <data name="RemoveItem" xml:space="preserve">
     <value>Remove</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
   <data name="ToolbarBackItem" xml:space="preserve">
     <value>back</value>
   </data>

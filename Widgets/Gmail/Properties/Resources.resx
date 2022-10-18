@@ -165,6 +165,9 @@
   <data name="RefreshItem" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
   <data name="Tip" xml:space="preserve">
     <value>Setup your Gmail account in options. Click to open options.</value>
   </data>

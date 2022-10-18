@@ -168,4 +168,7 @@
   <data name="OptionsWindowTitle" xml:space="preserve">
     <value>Clock options</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
 </root>

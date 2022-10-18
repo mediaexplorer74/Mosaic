@@ -129,6 +129,9 @@
   <data name="RefreshItem" xml:space="preserve">
     <value>Refresh</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
   <data name="WhatsNew" xml:space="preserve">
     <value>what's new?</value>
   </data>

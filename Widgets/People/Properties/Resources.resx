@@ -120,4 +120,7 @@
   <data name="HubWhatsNew" xml:space="preserve">
     <value>what's new?</value>
   </data>
+  <data name="Special" xml:space="preserve">
+    <value>Special</value>
+  </data>
 </root>
