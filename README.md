@@ -13,12 +13,12 @@ Then this project was totally lost. I'll try to do some remake (new metro cells,
 <td> <img src="Images/shot2.png" alt="Drawing" style="width: 800px;"/> </td>
 </tr></table>
 
-### My sweet old video from Youtube (2011)
+### My old video from Youtube (2011)
 [![Watch the video](https://img.youtube.com/vi/U0Hr9-C8WhE/maxresdefault.jpg)](https://www.youtube.com/watch?v=U0Hr9-C8WhE)
 
 
 ## What's new
-- Redesigned toolbar
+- Left Thabnails Bar fixed
 - Redesigned options
 - Added option to set picture to the Mosaic background
 - Added option to enable shadow under the widgets
@@ -72,11 +72,11 @@ Mosaic - это оболочка Windows (приложение), которая 
 <td> <img src="Images/shot2.png" alt="Drawing" style="width: 800px;"/> </td>
 </tr></table>
 
-### Мое милое старое видео с Youtube (2011)
+### Мое старое видео с Youtube (2011)
 [![Watch the video](https://img.youtube.com/vi/U0Hr9-C8WhE/maxresdefault.jpg)](https://www.youtube.com/watch?v=U0Hr9-C8WhE)
 
 ## Что нового
-- Переработанная панель инструментов
+- Левая панель ярлыков приложений исправлена
 - Переработанные опции
 - Добавлена возможность установить картинку на фон мозаики
 - Добавлена опция для включения тени под виджетами

@@ -137,7 +137,10 @@ namespace Twitter
                                                 TwitterRateLimitStatus rates;
                                                 try
                                                 {
-                                                    GetRateLimitStatusOptions options;
+                                                    
+                                                    GetRateLimitStatusOptions options = null;
+                                                    Debug.WriteLine(options);
+
                                                     //rates = Service.GetRateLimitStatus();
                                                     rates = null;
                                                 }

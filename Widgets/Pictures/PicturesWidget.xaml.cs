@@ -106,7 +106,7 @@ namespace Pictures
             }
             catch (Exception ex)
             {
-                //
+                Debug.WriteLine("[ex] PicturesWidget - LoadPicture error: " + ex.Message);
             }        
             
         }

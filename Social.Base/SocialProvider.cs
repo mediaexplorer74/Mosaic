@@ -250,7 +250,8 @@ namespace Social.Base
     {
         internal static Uri GetLoginUrl(string appId, object value, string[] permissions, bool v, IDictionary<string, object> loginParameters)
         {
-            throw new NotImplementedException();
+            //throw new NotImplementedException();
+            return null;
         }
     }
 

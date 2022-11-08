@@ -43,14 +43,14 @@ namespace Mosaic.Core
         private TextBlock title;
 
         // RnD
-        private MosaicFriendWidgetControl control;
-        private WebClient webClient;
-        private string id;
+        private MosaicFriendWidgetControl control = null;
+        private WebClient webClient = null;
+        private string id = null;
 
-        private Image previewControl;
+        private Image previewControl = default;
         private System.Windows.Forms.WebBrowser browser;
         private string url;
-        private string file;
+        private string file = null;
 
         public override string Name
         {

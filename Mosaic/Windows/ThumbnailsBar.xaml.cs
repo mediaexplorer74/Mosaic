@@ -27,12 +27,16 @@ namespace Mosaic.Windows
         {
             if (!App.Settings.IsExclusiveMode)
             {
+                this.Width = 100; // RnD
+                this.Left = SystemParameters.WorkArea.Left; // RnD: ME
                 this.Height = SystemParameters.WorkArea.Height;
                 this.Top = SystemParameters.WorkArea.Top;
                 this.Opacity = 1;
             }
             else
             {
+                this.Width = 100; // RnD
+                this.Left = SystemParameters.WorkArea.Left; // RnD: ME
                 this.Height = SystemParameters.PrimaryScreenHeight;
                 this.Top = 0;
                 this.Opacity = 1;
@@ -43,7 +47,9 @@ namespace Mosaic.Windows
 
         private void WindowLoaded(object sender, RoutedEventArgs e)
         {
-            this.Left = -Width + 2;
+            this.Left = 2;//-Width + 2;
+            this.Width = 2; // RnD
+                             // 
             isOpened = false;
             //if (!Dwm.IsGlassAvailable() || !Dwm.IsGlassEnabled())
             //{
@@ -61,6 +67,8 @@ namespace Mosaic.Windows
 
         private void ToolbarMouseLeave(object sender, MouseEventArgs e)
         {
+            this.Width = 2; // RnD
+            this.Left = SystemParameters.WorkArea.Left; // RnD: ME
             CloseToolbar();
         }
 
@@ -68,7 +76,8 @@ namespace Mosaic.Windows
         {
             if (!App.Settings.EnableThumbnailsBar)
             {
-                this.Left = -Width;
+                this.Left = 2;//2  - Width; // RnD
+                this.Width = 20;
                 return;
             }
 
@@ -77,6 +86,7 @@ namespace Mosaic.Windows
 
             if (!isOpened)
             {
+                //RnD: Open and control Left Bar... 
                 Open();
             }
         }
@@ -84,7 +94,9 @@ namespace Mosaic.Windows
         public void Open()
         {
             var s = Resources["ToolbarOpenAnim"] as Storyboard;
+            
             s.Begin();
+            
             isOpened = true;
 
             InitializeThumbnails();
@@ -92,17 +104,33 @@ namespace Mosaic.Windows
 
         private void InitializeThumbnails()
         {
-            IntPtr handle = ((System.Windows.Interop.HwndSource)System.Windows.Interop.HwndSource.FromVisual(this)).Handle;
+            this.Left = 0; // RnD
+            this.Width = 100; // RnD
+
+            IntPtr handle = 
+                ((System.Windows.Interop.HwndSource)System.Windows.Interop.HwndSource.FromVisual(this)).Handle;
             IntPtr current = WinAPI.GetWindow(handle, WinAPI.GetWindowCmd.First);
 
             do
             {
                 int GWL_STYLE = -16;
+                
                 uint normalWnd = 0x10000000 | 0x00800000 | 0x00080000;
+                
                 uint popupWnd = 0x10000000 | 0x80000000 | 0x00080000;
-                var windowLong = WinAPI.GetWindowLong(current, GWL_STYLE);
-                var text = WinAPI.GetText(current);
-                if (((normalWnd & windowLong) == normalWnd || (popupWnd & windowLong) == popupWnd) && !string.IsNullOrEmpty(text))
+                
+                int windowLong = WinAPI.GetWindowLong(current, GWL_STYLE);
+                
+                string text = WinAPI.GetText(current);
+                if (
+                    ( 
+                       (normalWnd & windowLong) == normalWnd 
+                       || 
+                       (popupWnd & windowLong) == popupWnd
+                    ) 
+                    && 
+                    !string.IsNullOrEmpty(text)
+                    )
                 {
                     var t = new TextBlock();
                     t.HorizontalAlignment = HorizontalAlignment.Center;
@@ -114,6 +142,7 @@ namespace Mosaic.Windows
                     t.Margin = new Thickness(0, 10, 0, 0);
                     t.Foreground = Brushes.White;
                     t.Text = text;
+
                     ThumbsList.Children.Add(t);
 
                     var thumb = new Thumbnail();
@@ -126,9 +155,13 @@ namespace Mosaic.Windows
                 current = WinAPI.GetWindow(current, WinAPI.GetWindowCmd.Next);
 
                 if (current == handle)
+                {
                     current = WinAPI.GetWindow(current, WinAPI.GetWindowCmd.Next);
+                }
             }
+
             while (current != IntPtr.Zero);
+
             Opacity = 1;
 
             //invalidate layout, without this thumbnails will be invisible
@@ -151,7 +184,7 @@ namespace Mosaic.Windows
         private void ToolbarCloseAnimCompleted(object sender, EventArgs e)
         {
             ThumbsList.Children.Clear();
-            Opacity = 0.01;
+            Opacity = 0.1;//0.01;
         }
 
         private void ThisSourceInitialized(object sender, EventArgs e)
@@ -161,19 +194,32 @@ namespace Mosaic.Windows
             Width--;
         }
 
+        // ThumsList mous left button "up" handle
         private void ThumbsListMouseLeftButtonUp(object sender, MouseButtonEventArgs e)
         {
-            var c = e.GetPosition(ThumbsList);
+            Point c = e.GetPosition(ThumbsList);
+
             foreach (Thumbnail thumb in ThumbsList.Children.OfType<Thumbnail>())
             {
                 var transform = thumb.TransformToVisual(ThumbsList);
                 Point p = transform.Transform(new Point(0, 0));
-                if (c.Y > p.Y && c.Y < p.Y + thumb.Height && c.X > p.X && c.X < p.X + thumb.Width)
+                if 
+                (
+                    c.Y > p.Y 
+                    && c.Y < p.Y + thumb.Height 
+                    && c.X > p.X 
+                    && c.X < p.X + thumb.Width
+                )
                 {
                     if (WinAPI.IsIconic(thumb.Source))
+                    {
                         WinAPI.ShowWindow(thumb.Source, WinAPI.WindowShowStyle.Restore);
+                    }
                     else
+                    {
                         WinAPI.ShowWindow(thumb.Source, WinAPI.WindowShowStyle.Show);
+                    }
+
                     WinAPI.SetForegroundWindow(thumb.Source);
                     break;
                 }
