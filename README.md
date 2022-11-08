@@ -22,6 +22,7 @@ Then this project was totally lost. I'll try to do some remake (new metro cells,
 - Redesigned options
 - Added option to set picture to the Mosaic background
 - Added option to enable shadow under the widgets
+- Targets x64 and ARM64 added (still not tested).
 
 ## Description 
 Mosaic is a small desktop enhancement utility designed specifically for Windows 10/11 users 
@@ -76,10 +77,11 @@ Mosaic - это оболочка Windows (приложение), которая 
 [![Watch the video](https://img.youtube.com/vi/U0Hr9-C8WhE/maxresdefault.jpg)](https://www.youtube.com/watch?v=U0Hr9-C8WhE)
 
 ## Что нового
-- Левая панель ярлыков приложений исправлена
-- Переработанные опции
-- Добавлена возможность установить картинку на фон мозаики
-- Добавлена опция для включения тени под виджетами
+- Левая панель ярлыков приложений исправлена.
+- Переработанные опции.
+- Добавлена возможность установить картинку на фон мозаики.
+- Добавлена опция для включения тени под виджетами.
+- Целевые платформы x64 и ARM64 добавлены в решение (еще не протестированы).
 
 ## Описание
 Mosaic - это небольшая утилита для улучшения рабочего стола, разработанная специально для пользователей Windows 10/11, чтобы перенести Начальный экран, реализованный в Windows 8, на их рабочий стол.
